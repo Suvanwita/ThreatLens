@@ -1,9 +1,8 @@
 # 🔍 ThreatLens – Mini SIEM in Python
 
-**ThreatLens** is a lightweight Security Information and Event Management (SIEM) tool built in Python.
-It monitors system logs, parses critical information, detects suspicious activities, and generates real-time alerts.
+A real-time log monitoring and threat detection system built in Python that simulates core features of a SIEM (Security Information and Event Management) tool.
 
-> 🚀 A simplified, developer-friendly version of enterprise SIEM tools.
+The system continuously monitors Linux logs, parses security events, detects suspicious activity (like brute-force attacks), and triggers alerts instantly.
 
 ---
 
@@ -22,12 +21,13 @@ It monitors system logs, parses critical information, detects suspicious activit
 ```
 ThreatLens/
 │
-├── monitor.py    # Reads and streams logs
-├── parser.py     # Extracts structured data from logs
-├── detector.py   # Applies detection logic (rules/anomalies)
-├── alert.py      # Handles alerting (console/email/etc.)
-├── main.py       # Entry point of the application
-└── utils.py      # Helper functions
+├── monitor.py # Real-time log reader
+├── parser.py # Log parsing logic
+├── detector.py # Threat detection engine
+├── alert.py # Alert system
+├── main.py # Main pipeline
+├── attacker.py # Attack simulation bot
+└── README.md
 ```
 
 ---
@@ -45,29 +45,45 @@ Logs → Monitor → Parser → Detector → Alert
 
 ---
 
+## 🔥 Attack Simulation Bot
+
+The attacker.py script simulates:
+
+- Random SSH login attempts
+- Sudo privilege abuse
+- Custom malicious logs
+- High-volume attack traffic
+
+---
+
 ## 🛠️ Installation
 
 ```bash
 git clone https://github.com/Suvanwita/ThreatLens.git
 cd ThreatLens
-pip install -r requirements.txt
 ```
 
 ---
 
 ## ▶️ Usage
 
+Run the system
 ```bash
-python main.py
+sudo python3 main.py
+```
+Simulate attacks (in another terminal)
+```bash
+python3 attacker.py
 ```
 
 ---
 
-## 🎯 Tech Stack
+## 📌 Tech Stack
 
-* Python
-* Regex (for parsing)
-* Basic rule-based detection
+- Python
+- Linux Logs (/var/log/auth.log)
+- Regex
+- Shell Commands
 
 ---
 
